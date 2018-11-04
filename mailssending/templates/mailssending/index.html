@@ -1,0 +1,85 @@
+{% load staticfiles %}
+
+<html lang="en">
+<head>
+
+	<title>Contact V7</title>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+<!--===============================================================================================-->
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="{% static 'vendor/bootstrap/css/bootstrap.min.css' %}">
+
+	<link rel="stylesheet" type="text/css" href="{% static 'fonts/font-awesome-4.7.0/css/font-awesome.min.css' %}">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="{% static 'fonts/Linearicons-Free-v1.0.0/icon-font.min.css' %}">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="{% static 'vendor/animate/animate.css' %}">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="{% static 'vendor/css-hamburgers/hamburgers.min.css' %}">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="{% static 'vendor/animsition/css/animsition.min.css' %}">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="{% static 'vendor/select2/select2.min.css' %}">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="{% static 'vendor/daterangepicker/daterangepicker.css' %}">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="{% static 'css/util.css' %}">
+	<link rel="stylesheet" type="text/css" href="{% static 'css/main.css' %}">
+<!--===============================================================================================-->
+
+</head>
+<body>
+	<div class="container">
+	<h1 style="text-align:center">{{success}}</h1>
+	</div>
+
+
+	<div class="container-contact100">
+		<div class="wrap-contact100">
+			<form class="contact100-form validate-form" method="post" action="{% url 'send' %}">
+        {% csrf_token %}
+				<span class="contact100-form-title">
+					Get in Touch
+				</span>
+
+				<div class="wrap-input100 validate-input" data-validate="Subject is required">
+          Subject
+          <br>{{form.subject}}
+				</div>
+
+        <div class="wrap-input100 validate-input" data-validate="Email is required">
+          Email
+          <br>{{form.email}}
+        </div>
+
+        <div class="wrap-input100 validate-input" data-validate="Subject is required">
+          Messages
+          <br>{{form.messages}}
+				</div>
+
+
+				<div class="container-contact100-form-btn">
+					<div class="wrap-contact100-form-btn">
+						<div class="contact100-form-bgbtn"></div>
+						<button class="contact100-form-btn">
+							Send Email
+						</button>
+					</div>
+				</div>
+			</form>
+		</div>
+	</div>
+
+
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-23581568-13"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-23581568-13');
+</script>
+
+</body>
+</html>
